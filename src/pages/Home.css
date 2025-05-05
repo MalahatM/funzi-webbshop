@@ -1,0 +1,43 @@
+.home {
+	background-image: url('../assets/homepage.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: calc(100vh - 140px); 
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+  }
+  
+  .home-overlay {
+	
+	color: rgb(125, 29, 130);
+	padding: 20px 40px;
+	text-align: center;
+	border-radius: 10px;
+  }
+  p{
+	font-size: 25px;
+	
+  }
+  .button {
+	background-color: rgb(230, 15, 154);
+	border: 2px solid white;
+	border-radius: 8px;
+	color: white;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin-top: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+  
+  .button:hover {
+	background-color: rgb(190, 10, 130);
+	transform: translateY(-2px);
+  }
+  
+  
