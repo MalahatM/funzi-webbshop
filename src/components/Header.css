@@ -2,8 +2,28 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #95b9cd; 
+	background-color: #95b9cd;
 	padding: 10px 20px;
+	position: relative;
+	min-height: 90px;
+  }
+  
+  .header-center {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	pointer-events: none; 
+  }
+  
+  .logo {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	object-fit: cover;
   }
   
   .header-left,
@@ -19,19 +39,12 @@
 	cursor: pointer;
   }
   
-  .header-center .logo {
-	height: 70px;
-	border-radius: 50%;
-	background-color: white;
-  }
-  
   .btn {
 	background-color: #e997c6; 
 	border: none;
 	border-radius: 10px;
 	padding: 8px 16px;
-	font-weight: bold;
-	cursor: pointer;
+cursor: pointer;
   }
   
   .search-box {
@@ -40,7 +53,7 @@
 	background-color: #e997c6;
 	border-radius: 10px;
 	padding: 6px 10px;
-  }
+	max-width: 400px; }
   
   .search-box input {
 	border: none;
@@ -48,6 +61,7 @@
 	outline: none;
 	font-weight: bold;
 	color: black;
+	width: 100%;
   }
   
   .search-icon {
@@ -55,19 +69,15 @@
 	color: black;
 	margin-left: 5px;
   }
-  .logo {
-	height: 80px;
-	width: 80px;
-	border-radius: 50%;
-	object-fit: cover;
-  }
   
-  /* Breakpoint برای صفحه‌های بزرگ‌تر از 1100px تا 320px */
-@media (max-width: 1100px) {
+  
+  @media (max-width: 1100px) {
 	.header {
 	  flex-direction: column;
 	  align-items: flex-start;
 	  gap: 10px;
+	  padding: 10px 15px;
+	  min-height: auto;
 	}
   
 	.header-left,
@@ -77,23 +87,64 @@
 	}
   
 	.header-center {
+	  position: static;
+	  transform: none;
 	  width: 100%;
 	  display: flex;
 	  justify-content: center;
+	  pointer-events: auto;
 	}
   
 	.search-box {
-	  width: 100%;
+	  width: 80%; 
+	  max-width: 300px;
+	  padding: 5px 8px;
 	}
   
 	.search-box input {
-	  width: 100%;
+	  font-size: 14px;
 	}
   }
   
   @media (max-width: 900px) {
 	.header {
-	  padding: 10px 8px;
+	  padding: 8px 12px;
+	  gap: 8px;
+	}
+  
+	.icon {
+	  font-size: 24px;
+	}
+  
+	.btn {
+	  padding: 7px 14px;
+	  font-size: 14px;
+	}
+  
+	.logo {
+	  height: 60px;
+	  width: 60px;
+	}
+  
+	.search-box {
+	  width: 70%;
+	  max-width: 250px;
+	  padding: 4px 6px;
+	}
+  
+	.search-box input {
+	  font-size: 13px;
+	}
+  
+	.search-icon {
+	  font-size: 14px;
+	}
+  }
+  
+  @media (max-width: 600px) {
+	.header {
+	  padding: 6px 10px;
+	  gap: 6px;
 	}
   
 	.icon {
@@ -101,28 +152,7 @@
 	}
   
 	.btn {
-	  padding: 8px 14px;
-	  font-size: 14px;
-	}
-  
-	.logo {
-	  height: 70px;
-	  width: 70px;
-	}
-  }
-  
-  @media (max-width: 600px) {
-	.header {
-	  padding: 6px 10px;
-	  gap: 12px;
-	}
-  
-	.icon {
-	  font-size: 18px;
-	}
-  
-	.btn {
-	  padding: 6px 10px;
+	  padding: 5px 10px;
 	  font-size: 12px;
 	}
   
@@ -131,20 +161,29 @@
 	  width: 50px;
 	}
   
+	.search-box {
+	  width: 60%;
+	  max-width: 200px;
+	  padding: 3px 5px;
+	}
+  
 	.search-box input {
-	  font-size: 14px;
-	  padding: 6px;
+	  font-size: 12px;
+	}
+  
+	.search-icon {
+	  font-size: 12px;
 	}
   }
   
   @media (max-width: 400px) {
 	.header {
 	  padding: 4px 8px;
-	  gap: 10px;
+	  gap: 5px;
 	}
   
 	.icon {
-	  font-size: 16px;
+	  font-size: 18px;
 	}
   
 	.btn {
@@ -158,27 +197,28 @@
 	}
   
 	.search-box {
-	  margin-top: 5px;
+	  width: 55%;
+	  max-width: 150px;
+	  padding: 2px 4px;
 	}
   
 	.search-box input {
-	  font-size: 12px;
-	  padding: 4px;
+	  font-size: 10px;
 	}
   
 	.search-icon {
-	  font-size: 12px;
+	  font-size: 10px;
 	}
   }
   
   @media (max-width: 320px) {
 	.header {
 	  padding: 2px 6px;
-	  gap: 8px;
+	  gap: 4px;
 	}
   
 	.icon {
-	  font-size: 14px;
+	  font-size: 16px;
 	}
   
 	.btn {
@@ -191,12 +231,18 @@
 	  width: 35px;
 	}
   
+	.search-box {
+	  width: 50%;
+	  max-width: 120px;
+	  padding: 2px 3px;
+	}
+  
 	.search-box input {
-	  font-size: 10px;
-	  padding: 3px;
+	  font-size: 9px;
 	}
   
 	.search-icon {
-	  font-size: 10px;
+	  font-size: 9px;
+	  margin-left: 3px;
 	}
   }
