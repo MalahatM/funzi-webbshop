@@ -1,4 +1,3 @@
-
 .footer {
 	background-color: #95b9cd; 
 	color: white;
@@ -65,17 +64,156 @@
 	font-size: 14px;
   }
   
-  @media (max-width: 768px) {
+  /* ریسپانسیو کردن از 1100px تا 320px */
+  @media (max-width: 1100px) {
+	.footer-container {
+	  justify-content: center;
+	  gap: 20px;
+	}
+  
+	.footer-left,
+	.footer-right {
+	  margin: 0 15px;
+	  width: 40%;
+	}
+  
+	.footer-title {
+	  font-size: 16px;
+	}
+  
+	.footer-social-link {
+	  font-size: 22px;
+	}
+  
+	.footer-icon {
+	  font-size: 18px;
+	}
+  
+	.footer-text {
+	  font-size: 14px;
+	}
+  
+	.footer-bottom {
+	  margin-top: 15px;
+	  font-size: 12px;
+	}
+  }
+  
+  @media (max-width: 900px) {
+	.footer-left,
+	.footer-right {
+	  width: 45%;
+	  margin: 0 10px;
+	}
+  
+	.footer-container {
+	  gap: 15px;
+	}
+  
+	.footer-title {
+	  font-size: 15px;
+	}
+  
+	.footer-social-link {
+	  font-size: 20px;
+	}
+  
+	.footer-icon {
+	  font-size: 16px;
+	}
+  
+	.footer-text {
+	  font-size: 13px;
+	}
+  
+	.footer-bottom {
+	  margin-top: 12px;
+	  font-size: 11px;
+	}
+  }
+  
+  @media (max-width: 600px) {
 	.footer-container {
 	  flex-direction: column;
 	  align-items: center;
+	  gap: 10px;
 	}
   
 	.footer-left,
 	.footer-right {
 	  width: 100%;
+	  margin: 0;
 	  align-items: center;
-	  text-align: center;
+	}
+  
+	.footer-title {
+	  font-size: 14px;
+	}
+  
+	.footer-socials {
+	  justify-content: center;
+	}
+  
+	.footer-social-link {
+	  font-size: 18px;
+	}
+  
+	.footer-icon {
+	  font-size: 15px;
+	}
+  
+	.footer-text {
+	  font-size: 12px;
+	}
+  
+	.footer-bottom {
+	  margin-top: 10px;
+	  font-size: 10px;
 	}
   }
   
+  @media (max-width: 400px) {
+	.footer-title {
+	  font-size: 13px;
+	}
+  
+	.footer-social-link {
+	  font-size: 16px;
+	}
+  
+	.footer-icon {
+	  font-size: 14px;
+	}
+  
+	.footer-text {
+	  font-size: 11px;
+	}
+  
+	.footer-bottom {
+	  margin-top: 8px;
+	  font-size: 9px;
+	}
+  }
+  
+  @media (max-width: 320px) {
+	.footer-title {
+	  font-size: 12px;
+	}
+  
+	.footer-social-link {
+	  font-size: 14px;
+	}
+  
+	.footer-icon {
+	  font-size: 12px;
+	}
+  
+	.footer-text {
+	  font-size: 10px;
+	}
+  
+	.footer-bottom {
+	  margin-top: 6px;
+	  font-size: 8px;
+	}
+  }
