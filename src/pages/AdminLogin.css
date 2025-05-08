@@ -1,0 +1,46 @@
+.admin-login-page {
+	text-align: center;
+	padding: 30px;
+  }
+  
+  .admin-login-form {
+	max-width: 400px; 
+	margin: auto;
+	background: #fce4ec;
+	padding: 30px; /* بیشتر شد */
+	border-radius: 12px;
+	box-sizing: border-box;
+  }
+  
+  
+  .admin-login-form input,
+  .admin-login-form button {
+	width: 100%;
+	box-sizing: border-box; 
+  }
+  
+  .admin-login-form input {
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+  }
+  
+  .admin-login-form button {
+	background-color: #e997c6;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+  }
+  
+  .admin-login-form button:hover {
+	background-color: #d16fae;
+  }
+  
+  .error {
+	color: red;
+	font-size: 14px;
+  }
+  
