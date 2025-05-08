@@ -1,0 +1,110 @@
+.admin-page {
+	padding: 20px;
+	text-align: center;
+  }
+  
+  .admin-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  h2{
+font-size: 25px;
+color: #f44336;
+  }
+  
+  .add-btn {
+	background-color: #15a167;
+	color: white;
+	padding: 8px 14px;
+	border: none;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background-color 0.3s;
+  }
+  
+  .add-btn:hover {
+	background-color: #04422b;
+  }
+  
+  .admin-list {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .admin-card {
+	background: #fce4ec; /* صورتی کم‌رنگ */
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	text-align: center;
+  }
+  
+  .admin-img {
+	height: 100px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-bottom: 10px;
+  }
+  
+  .admin-actions button {
+	margin: 5px;
+	padding: 6px 10px;
+	cursor: pointer;
+	border: none;
+	border-radius: 6px;
+  }
+  
+  .delete-btn {
+	background-color: #f8d7da; /* قرمز کم‌رنگ */
+	color: #721c24;
+	transition: background-color 0.3s;
+  }
+  
+  .delete-btn:hover {
+	background-color: #f44336; /* قرمز پررنگ */
+	color: white;
+  }
+  
+  .admin-edit-form input {
+	display: block;
+	margin: 8px auto;
+	padding: 6px;
+	width: 80%;
+  }
+  
+  .admin-edit-form small {
+	color: red;
+	font-size: 12px;
+  }
+  .admin-actions-top {
+	display: flex;
+	gap: 10px;
+  }
+  
+  .logout-btn {
+	background-color: #a05282;
+	color: rgb(249, 245, 245);
+	font-size: 18px;
+	border: none;
+	border-radius: 6px;
+	padding: 8px 18px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s;
+  }
+  
+  .logout-btn:hover {
+	background-color: #b80f1a;
+  }
+  
+  .admin-title-group {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+  }
+  
+  
