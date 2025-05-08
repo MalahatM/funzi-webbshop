@@ -2,17 +2,28 @@ import React, { useEffect } from "react";
 import useProductStore from "../store/ProductStore";
 import "./Product.css";
 
-
 const Product = () => {
-  const { products, fetchProducts, loading, error, addToCart } =
-    useProductStore();
+  const {
+    products,
+    fetchProducts,
+    loading,
+    error,
+    addToCart,
+    searchTerm, // دسترسی به سرچ
+  } = useProductStore();
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  // category
-  const grouped = products.reduce((acc, item) => {
+  // فیلتر کردن براساس سرچ
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // دسته‌بندی براساس category بعد از فیلتر
+  const grouped = filteredProducts.reduce((acc, item) => {
     acc[item.category] = [...(acc[item.category] || []), item];
     return acc;
   }, {});

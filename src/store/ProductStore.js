@@ -1,10 +1,15 @@
 import { create } from 'zustand';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
+import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
+
 
 const useProductStore = create((set) => ({
   products: [],
   cart: [],
+  searchTerm: '',
+setSearchTerm: (term) => set({ searchTerm: term }),
+
   loading: false,
   error: null,
 
@@ -62,6 +67,31 @@ const useProductStore = create((set) => ({
     })),
 
   clearCart: () => set({ cart: [] }),
+  deleteProduct: async (id) => {
+    try {
+      await deleteDoc(doc(db, 'products', id));
+      set((state) => ({
+        products: state.products.filter((p) => p.id !== id),
+      }));
+    } catch (error) {
+      set({ error: error.message });
+    }
+  },
+
+  updateProduct: async (id, updatedData) => {
+    try {
+      await updateDoc(doc(db, 'products', id), updatedData);
+      set((state) => ({
+        products: state.products.map((p) =>
+          p.id === id ? { ...p, ...updatedData } : p
+        ),
+      }));
+    } catch (error) {
+      set({ error: error.message });
+    }
+  },
+
 }));
+
 
 export default useProductStore;
