@@ -65,6 +65,8 @@ const Admin = () => {
     navigate('/admin-login');
   };
 
+  const categories = ['water play', 'outdoor play', 'Activ play'];
+
   return (
     <div className="admin-page">
       <div className="admin-header">
@@ -76,33 +78,41 @@ const Admin = () => {
       </div>
 
       <div className="admin-list">
-        {products.map((product) => (
-          <div key={product.id} className="admin-card">
-            {editingId === product.id ? (
-              <div className="admin-edit-form">
-                <input name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
-                {errors.title && <small>{errors.title}</small>}
-                <input name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
-                {errors.price && <small>{errors.price}</small>}
-                <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} placeholder="Image URL" />
-                {errors.imageUrl && <small>{errors.imageUrl}</small>}
-                <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" />
-                {errors.category && <small>{errors.category}</small>}
-                <button onClick={handleSave}>💾 Save</button>
-                <button onClick={handleCancel}>Cancel</button>
-              </div>
-            ) : (
-              <>
-                <img src={product.imageUrl} alt={product.title} className="admin-img" />
-                <h4>{product.title}</h4>
-                <p>{product.price} SEK</p>
-                <p><strong>Category:</strong> {product.category}</p>
-                <div className="admin-actions">
-                  <button onClick={() => handleEdit(product)}>✏️ Edit</button>
-                  <button className="delete-btn" onClick={() => deleteProduct(product.id)}>🗑 Delete</button>
-                </div>
-              </>
-            )}
+        {categories.map((cat) => (
+          <div key={cat} className="admin-category-section">
+            <h3 className="admin-category-title">{cat}</h3>
+            <div className="admin-category-grid">
+              {products
+                .filter((product) => product.category === cat)
+                .map((product) => (
+                  <div key={product.id} className="admin-card">
+                    {editingId === product.id ? (
+                      <div className="admin-edit-form">
+                        <input name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
+                        {errors.title && <small>{errors.title}</small>}
+                        <input name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
+                        {errors.price && <small>{errors.price}</small>}
+                        <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} placeholder="Image URL" />
+                        {errors.imageUrl && <small>{errors.imageUrl}</small>}
+                        <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" />
+                        {errors.category && <small>{errors.category}</small>}
+                        <button onClick={handleSave}>💾 Save</button>
+                        <button onClick={handleCancel}>Cancel</button>
+                      </div>
+                    ) : (
+                      <>
+                        <img src={product.imageUrl} alt={product.title} className="admin-img" />
+                        <h4>{product.title}</h4>
+                        <p>{product.price} SEK</p>
+                        <div className="admin-actions">
+                          <button onClick={() => handleEdit(product)}>✏️ Edit</button>
+                          <button className="delete-btn" onClick={() => deleteProduct(product.id)}>🗑 Delete</button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                ))}
+            </div>
           </div>
         ))}
       </div>
