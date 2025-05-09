@@ -1,5 +1,5 @@
 .home {
-	background-image: url('../assets/homepage.jpeg');
+	background-image: url('../assets/homepage.avif');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -40,10 +40,10 @@
 	transform: translateY(-2px);
   }
   
-  /* ریسپانسیو کردن از 1100px تا 320px */
+ 
   @media (max-width: 1100px) {
 	.home {
-	  min-height: calc(100vh - 120px); /* کاهش ارتفاع با توجه به هدر کوچک‌تر */
+	  min-height: calc(100vh - 120px); 
 	}
   
 	.home-overlay {
@@ -84,7 +84,7 @@
   @media (max-width: 600px) {
 	.home {
 	  min-height: calc(100vh - 80px);
-	  background-position: top center; /* تنظیم موقعیت تصویر برای صفحه‌های کوچک‌تر */
+	  background-position: top center;
 	}
   
 	.home-overlay {
@@ -99,7 +99,7 @@
 	  padding: 6px 14px;
 	  font-size: 13px;
 	  margin-top: 10px;
-	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* سایه کمتر برای صفحه‌های کوچک */
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 	}
   }
   

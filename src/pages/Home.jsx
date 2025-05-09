@@ -9,7 +9,7 @@ function Home() {
         <h1>Welcome to Funzi!</h1>
         <p>At Funzi, we believe that choosing the right toy 
 		can be one of the most joyful and magical experiences.<br></br> Let’s create unforgettable summer memories together.</p>
-		<Link to="/cart">
+		<Link to="/Products">
   <button className="button">See Our Products</button>
 </Link>
 
