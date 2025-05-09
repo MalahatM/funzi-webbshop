@@ -20,7 +20,7 @@ const AdminLogin = () => {
       localStorage.setItem('isAdmin', 'true');
       navigate('/admin');
     } else {
-      setError('Invalid credentials');
+      setError('Incorrect username or password');
     }
   };
 
