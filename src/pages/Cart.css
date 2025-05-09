@@ -14,7 +14,7 @@
 	display: flex;
 	gap: 20px;
 	align-items: center;
-	background-color: #f2f2f2;
+	background-color: #e5bada;
 	padding: 15px;
 	border-radius: 8px;
   }
@@ -62,5 +62,35 @@
 	color: #777;
 	font-size: 18px;
 	margin-top: 40px;
+  }
+  @media (max-width: 350px) {
+	.cart-item {
+	  flex-direction: column;
+	  align-items: flex-start;
+	}
+  
+	.cart-item img {
+	  width: 100%;
+	  height: auto;
+	}
+  
+	.actions {
+	  flex-wrap: wrap;
+	  gap: 8px;
+	  justify-content: flex-start;
+	}
+  
+	.actions button {
+	  font-size: 14px;
+	  padding: 4px 6px;
+	}
+  
+	.remove {
+	  font-size: 14px;
+	}
+  
+	.total {
+	  font-size: 18px;
+	}
   }
   

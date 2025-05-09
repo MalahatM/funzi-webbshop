@@ -1,6 +1,6 @@
-// src/pages/Cart.jsx
+
 import React from "react";
-import useProductStore from "../store/ProductStore"; // ✅ اصلاح ایمپورت
+import useProductStore from "../store/ProductStore"; // 
 import "./Cart.css";
 
 const Cart = () => {
