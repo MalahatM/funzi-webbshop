@@ -1,6 +1,7 @@
 // src/pages/AdminLogin.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaTimes } from 'react-icons/fa';
 import './AdminLogin.css';
 
 const AdminLogin = () => {
@@ -25,9 +26,13 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="admin-login-page">
-      <h2>Admin Login</h2>
-      <form onSubmit={handleSubmit} className="admin-login-form">
+	
+	<div className="admin-login-page">
+  <h2>Admin Login</h2>
+  <form onSubmit={handleSubmit} className="admin-login-form">
+    <button type="button" className="form-close-btn" onClick={() => navigate('/')}>
+      <FaTimes />
+    </button>
         <input
           type="text"
           name="username"

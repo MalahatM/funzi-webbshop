@@ -7,16 +7,16 @@
 	max-width: 400px; 
 	margin: auto;
 	background: #fce4ec;
-	padding: 30px; /* بیشتر شد */
+	padding: 30px; 
 	border-radius: 12px;
 	box-sizing: border-box;
   }
   
   
   .admin-login-form input,
-  .admin-login-form button {
+  .admin-login-form button:not(.form-close-btn) {
 	width: 100%;
-	box-sizing: border-box; 
+	box-sizing: border-box;
   }
   
   .admin-login-form input {
@@ -29,7 +29,7 @@
   .admin-login-form button {
 	background-color: #e997c6;
 	color: white;
-	padding: 10px;
+	padding: 6px;
 	border: none;
 	border-radius: 6px;
 	cursor: pointer;
@@ -43,4 +43,39 @@
 	color: red;
 	font-size: 14px;
   }
+  
+  .admin-login-form {
+	position: relative;
+	max-width: 400px;
+	margin: auto;
+	background: #fce4ec;
+	padding: 30px;
+	border-radius: 12px;
+	box-sizing: border-box;
+  }
+  
+  .form-close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #fce4ec;
+	border: none;
+	border-radius: 50%;
+	font-size: 14px;
+	color: #555;
+	cursor: pointer;
+	padding: 6px;     
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s ease;
+  }
+  
+  .form-close-btn:hover {
+	background-color: #f8bbd0;
+	color: #000;
+  }
+  
+  
   
