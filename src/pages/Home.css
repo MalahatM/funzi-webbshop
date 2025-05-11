@@ -12,15 +12,20 @@
   }
   
   .home-overlay {
-	color: rgb(125, 29, 130);
+	color: rgb(8, 1, 8);
 	padding: 20px 40px;
 	text-align: center;
 	border-radius: 10px;
   }
   
   p {
-	font-size: 25px;
+	font-size: 35px;
   }
+ .home-overlay p {
+  text-shadow: 0 0 8px rgba(168, 46, 149, 0.6);
+}
+
+  
   
   .button {
 	background-color: rgb(230, 15, 154);
