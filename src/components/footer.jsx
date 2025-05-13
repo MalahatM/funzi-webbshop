@@ -1,10 +1,19 @@
 import React from 'react';
 import './Footer.css';
+import { FaLock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="footer">
+		  <div className="admin-link-wrapper">
+    <Link to="/admin" className="admin-link">
+      <FaLock className="lock-icon" />
+    </Link>
+  </div>
       <div className="footer-container">
      
         <div className="footer-left">
@@ -16,6 +25,8 @@ const Footer = () => {
             <a href="https://instagram.com" className="footer-social-link">
               <FaInstagram className="footer-social-icon" />
             </a>
+		
+
           </div>
         </div>
 

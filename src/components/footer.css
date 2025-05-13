@@ -1,7 +1,6 @@
 .footer {
 	background-color: #95b9cd; 
 	color: white;
-	padding: 10px;
 	text-align: center;
   }
   
@@ -63,8 +62,29 @@
 	margin-top: 20px;
 	font-size: 14px;
   }
+  .admin-link-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+	margin-top: 0px;
+  }
   
-  /* ریسپانسیو کردن از 1100px تا 320px */
+  .admin-link {
+	color: #891155; 
+	font-size: 45px; 
+	transition: color 0.3s;
+  }
+  
+  .admin-link:hover {
+	color: #ffbb33; 
+  }
+  
+  .lock-icon {
+	cursor: pointer;
+  }
+  
+  
+ 
   @media (max-width: 1100px) {
 	.footer-container {
 	  justify-content: center;
@@ -217,3 +237,4 @@
 	  font-size: 8px;
 	}
   }
+ 
