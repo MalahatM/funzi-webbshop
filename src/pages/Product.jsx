@@ -9,20 +9,20 @@ const Product = () => {
     loading,
     error,
     addToCart,
-    searchTerm, // دسترسی به سرچ
+    searchTerm,
   } = useProductStore();
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  // فیلتر کردن براساس سرچ
+  // filtering for search
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // دسته‌بندی براساس category بعد از فیلتر
+ 
   const grouped = filteredProducts.reduce((acc, item) => {
     acc[item.category] = [...(acc[item.category] || []), item];
     return acc;

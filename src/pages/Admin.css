@@ -36,7 +36,7 @@ color: #f44336;
   }
   
   .admin-card {
-	background: #fce4ec; /* صورتی کم‌رنگ */
+	background: #fce4ec; 
 	padding: 16px;
 	border-radius: 12px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -59,13 +59,13 @@ color: #f44336;
   }
   
   .delete-btn {
-	background-color: #f8d7da; /* قرمز کم‌رنگ */
+	background-color: #f8d7da; 
 	color: #721c24;
 	transition: background-color 0.3s;
   }
   
   .delete-btn:hover {
-	background-color: #f44336; /* قرمز پررنگ */
+	background-color: #f44336; 
 	color: white;
   }
   

@@ -66,7 +66,7 @@ const AddProduct = () => {
     <div className="add-product-page">
       <h2>Add New Product</h2>
       <form onSubmit={handleSubmit} className="add-product-form">
-        {/* 🔺 دکمه ضربدر داخل فرم */}
+        
         <button
           type="button"
           className="form-close-btn"

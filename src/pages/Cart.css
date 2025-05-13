@@ -63,6 +63,22 @@
 	font-size: 18px;
 	margin-top: 40px;
   }
+  .continue-btn {
+	margin-top: 20px;
+	background-color: #4caf50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .continue-btn:hover {
+	background-color: #388e3c;
+  }
+  
   @media (max-width: 350px) {
 	.cart-item {
 	  flex-direction: column;

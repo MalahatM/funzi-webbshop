@@ -1,12 +1,15 @@
 
 import React from "react";
-import useProductStore from "../store/ProductStore"; // 
+import useProductStore from "../store/ProductStore"; 
+import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = () => {
   const { cart, increase, decrease, removeFromCart } = useProductStore();
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const navigate = useNavigate();
+
 
   return (
     <div className="cart-page">
@@ -43,7 +46,12 @@ const Cart = () => {
 
           <div className="total">
             <h3>Total: {total} SEK</h3>
+			<button className="continue-btn" onClick={() => navigate("/thank-you")}>
+  Continue
+</button>
+
           </div>
+	
         </>
       )}
     </div>
