@@ -5,6 +5,10 @@ import Cart from './pages/Cart';
 import Admin from './pages/Admin';
 import AddProduct from './pages/AddProduct';
 import AdminLogin from './pages/AdminLogin';
+import ThankYou from './pages/ThankYou';
+
+
+
 
 import Layout from './components/Layout';
 
@@ -18,10 +22,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="cart" element={<Cart />} />
           <Route path="products" element={<Product />} />
+		  <Route path="/thank-you" element={<ThankYou />} />
         </Route>
 		<Route path="/admin" element={<Admin />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+		
 		</Routes>
     </Router>
   );
