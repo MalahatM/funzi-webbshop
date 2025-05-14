@@ -13,19 +13,20 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="products" element={<Product />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-        </Route>
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/admin-login" element={<AdminLogin />} />
-      </Routes>
-    </Router>
+	<Router>
+	<Routes>
+	  <Route path="/" element={<Layout />}>
+		<Route index element={<Home />} />
+		<Route path="cart" element={<Cart />} />
+		<Route path="products" element={<Product />} />
+		<Route path="thank-you" element={<ThankYou />} />
+		<Route path="admin" element={<Admin />} />
+		<Route path="add-product" element={<AddProduct />} />
+		<Route path="admin-login" element={<AdminLogin />} />
+	  </Route>
+	</Routes>
+  </Router>
+  
   );
 }
 
