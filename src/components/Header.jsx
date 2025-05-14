@@ -14,8 +14,8 @@ const Header = () => {
     <header className="header">
       <div className="header-left">
         <Link to="/cart" className="cart-icon-container">
-          <FaShoppingBasket className="icon" />
-          {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
+		<FaShoppingBasket className="basket-icon" />
+ {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
         </Link>
       </div>
 
