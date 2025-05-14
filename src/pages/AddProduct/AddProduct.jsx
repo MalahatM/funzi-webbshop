@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import Joi from 'joi';
-import { useNavigate } from 'react-router-dom';
-import { db } from '../firebase/firebase';
-import { collection, addDoc } from 'firebase/firestore';
-import { FaTimes } from 'react-icons/fa'; 
-import './AddProduct.css';
+import React, { useState } from "react";
+import Joi from "joi";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../firebase/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { FaTimes } from "react-icons/fa";
+import "./AddProduct.css";
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
-    title: '',
-    price: '',
-    imageUrl: '',
-    category: '',
+    title: "",
+    price: "",
+    imageUrl: "",
+    category: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -19,20 +19,20 @@ const AddProduct = () => {
 
   const schema = Joi.object({
     title: Joi.string().min(2).required().messages({
-      'string.empty': 'Title is required',
-      'string.min': 'Title must be at least 2 characters',
+      "string.empty": "Title is required",
+      "string.min": "Title must be at least 2 characters",
     }),
     price: Joi.number().min(1).required().messages({
-      'number.base': 'Price must be a number',
-      'number.min': 'Price must be at least 1',
-      'any.required': 'Price is required',
+      "number.base": "Price must be a number",
+      "number.min": "Price must be at least 1",
+      "any.required": "Price is required",
     }),
     imageUrl: Joi.string().uri().required().messages({
-      'string.uri': 'Image URL must be a valid link',
-      'string.empty': 'Image URL is required',
+      "string.uri": "Image URL must be a valid link",
+      "string.empty": "Image URL is required",
     }),
     category: Joi.string().required().messages({
-      'string.empty': 'Category is required',
+      "string.empty": "Category is required",
     }),
   });
 
@@ -52,13 +52,13 @@ const AddProduct = () => {
     }
 
     try {
-      await addDoc(collection(db, 'products'), {
+      await addDoc(collection(db, "products"), {
         ...formData,
         price: parseFloat(formData.price),
       });
-      navigate('/admin');
+      navigate("/admin");
     } catch (err) {
-      console.error('Error adding product:', err.message);
+      console.error("Error adding product:", err.message);
     }
   };
 
@@ -66,11 +66,10 @@ const AddProduct = () => {
     <div className="add-product-page">
       <h2>Add New Product</h2>
       <form onSubmit={handleSubmit} className="add-product-form">
-        
         <button
           type="button"
           className="form-close-btn"
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
         >
           <FaTimes />
         </button>
