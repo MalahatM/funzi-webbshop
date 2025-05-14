@@ -17,7 +17,7 @@ const AdminLogin = () => {
     e.preventDefault();
     const { username, password } = formData;
 
-    if (username === 'admin' && password === 'funzi123') {
+    if (username === 'admin' && password === 'password') {
       localStorage.setItem('isAdmin', 'true');
       navigate('/admin');
     } else {
