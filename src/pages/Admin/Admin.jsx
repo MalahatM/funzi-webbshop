@@ -18,11 +18,9 @@ const Admin = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    if (localStorage.getItem("isAdmin") !== "true") {
-      navigate("/admin-login");
-    }
-    fetchProducts();
-  }, []);
+	fetchProducts();
+  }, [fetchProducts]);
+  
 
   const schema = Joi.object({
     title: Joi.string().min(2).required(),
