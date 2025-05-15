@@ -1,13 +1,19 @@
 .add-product-page {
 	padding: 20px;
 	text-align: center;
-  }
+	min-height: calc(100vh - 140px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+  } 
   
   .add-product-form {
 	position: relative;
 	max-width: 400px;
 	margin: auto;
-	background: #fce4ec;
+	background: rgb(232, 200, 222);
 	padding-top: 36px; 
 	padding-right: 20px;
 	padding-bottom: 20px;
@@ -36,7 +42,7 @@
   }
   
   .add-product-form button:hover {
-	background-color: #d16fae;
+	background-color: #b77ea3;
   }
   
   .add-product-form small {
@@ -66,8 +72,23 @@
 	color: #000;
   }
   body{
-	background-color: rgb(241, 221, 225);
+	background-color: rgb(243, 229, 231);
   }
+ 
+  @media (min-width: 590px) {
+	.add-product-form {
+	  max-width: 60%;
+	  padding: 30px 80px;
+	}
+  
+	.add-product-form input,
+	.add-product-form button {
+	  font-size: 16px;
+	  padding: 8px;
+	}
+  }
+  
+  
   
   
   
