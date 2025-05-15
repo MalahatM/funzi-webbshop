@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="footer">
 		  <div className="admin-link-wrapper">
-    <Link to="/admin" className="admin-link">
+    <Link to="/admin-login" className="admin-link">
       <FaLock className="lock-icon" />
     </Link>
   </div>
