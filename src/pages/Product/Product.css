@@ -54,4 +54,26 @@
 	cursor: pointer;
 	border-radius: 5px;
   }
- 
+  .sort-container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+	gap: 10px;
+  }
+  
+  .sort-container label {
+	font-weight: bold;
+	font-size:20px;
+	color: #0e0d0d;
+  }
+  
+  .sort-container select {
+	padding: 10px 25px;
+	border-radius: 6px;
+	border: 2px solid #630657;
+	font-size: 14px;
+	background-color: #dbbdd4;
+	cursor: pointer;
+  }
+  
