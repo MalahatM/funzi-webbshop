@@ -68,7 +68,7 @@ const Admin = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAdmin");
-    navigate("/admin-login");
+    navigate("/");
   };
 
   const categories = ["water play", "outdoor play", "Activ play"];
