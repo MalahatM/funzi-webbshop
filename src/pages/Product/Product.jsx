@@ -6,9 +6,10 @@ const Product = () => {
   const { products, fetchProducts, loading, error, addToCart, searchTerm } =
     useProductStore();
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+	useEffect(() => {
+		fetchProducts();
+	  }, [fetchProducts]);
+	  
 
   // filtering for search
   const filteredProducts = products.filter(

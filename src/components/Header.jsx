@@ -1,21 +1,33 @@
 import React from 'react';
 import './Header.css';
 import logo from '../assets/funzi-logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaShoppingBasket, FaSearch } from 'react-icons/fa';
 import useProductStore from '../store/ProductStore';
 
 const Header = () => {
   const cart = useProductStore((state) => state.cart);
-  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const setSearchTerm = useProductStore((state) => state.setSearchTerm);
+  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    if (location.pathname !== '/products') {
+      navigate('/products');
+    }
+  };
 
   return (
     <header className="header">
       <div className="header-left">
         <Link to="/cart" className="cart-icon-container">
-		<FaShoppingBasket className="basket-icon" />
- {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
+          <FaShoppingBasket className="basket-icon" />
+          {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
         </Link>
       </div>
 
@@ -29,7 +41,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search here"
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={handleSearch}
           />
           <FaSearch className="search-icon" />
         </div>
