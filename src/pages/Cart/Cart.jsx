@@ -24,7 +24,7 @@ const Cart = () => {
                 <div className="info">
                   <h4>{item.title}</h4>
                   <p>
-                    {item.price} SEK x {item.quantity}
+                    {item.price} $ x {item.quantity}
                   </p>
                   <div className="actions">
                     <button onClick={() => decrease(item.id)}>-</button>
@@ -43,7 +43,7 @@ const Cart = () => {
           </div>
 
           <div className="total">
-            <h3>Total: {total} SEK</h3>
+            <h3>Total: {total} $</h3>
             <button
               className="continue-btn"
               onClick={() => navigate("/thank-you")}

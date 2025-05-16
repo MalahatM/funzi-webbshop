@@ -12,15 +12,21 @@ const Product = () => {
     fetchProducts();
   }, [fetchProducts]);
 
-  // filter for search
-  const filteredProducts = products.filter(
-    (product) =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.category.toLowerCase().includes(searchTerm.toLowerCase())
+  //  Safe filter for search
+  const filteredProducts = products.filter((product) => {
+    const title = product.title?.toLowerCase() || "";
+    const category = product.category?.toLowerCase() || "";
+    const term = searchTerm.toLowerCase();
+    return title.includes(term) || category.includes(term);
+  });
+
+  //  Remove incomplete products
+  const validProducts = filteredProducts.filter(
+    (p) => p.title && p.category && typeof p.price === "number"
   );
 
-  // sort based on selected option
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  //  Sort
+  const sortedProducts = [...validProducts].sort((a, b) => {
     switch (sortOption) {
       case "price-low-high":
         return a.price - b.price;
@@ -35,7 +41,7 @@ const Product = () => {
     }
   });
 
-  // group by category
+  // Group by category
   const grouped = sortedProducts.reduce((acc, item) => {
     acc[item.category] = [...(acc[item.category] || []), item];
     return acc;
@@ -74,7 +80,7 @@ const Product = () => {
                   className="product-img"
                 />
                 <h4>{product.title}</h4>
-                <p>Price: {product.price} sek</p>
+                <p>Price: {product.price} $</p>
                 <button className="add-btn" onClick={() => addToCart(product)}>
                   Add to Cart
                 </button>
