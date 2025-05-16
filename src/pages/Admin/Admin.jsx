@@ -135,7 +135,7 @@ const Admin = () => {
                           className="admin-img"
                         />
                         <h4>{product.title}</h4>
-                        <p>{product.price} SEK</p>
+                        <p>{product.price} $</p>
                         <div className="admin-actions">
                           <button onClick={() => handleEdit(product)}>
                             ✏️ Edit
